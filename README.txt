@@ -32,7 +32,7 @@ No downloads needed — just click to start:
 > _You buy a $2 ticket. 25% chance to win $10._  
 > ✅ EV = (0.25 × 10) − 2 = **0.50**
 
-Answer within ±0.25 of the correct EV to score a point.
+Answer the correct EV to score a point.
 
 ---
 
@@ -61,3 +61,4 @@ Unzip the folder and open `index.html` in your browser.
 
 ```bash
 git clone https://github.com/raptor8600/Expected-Value-EV-Math-Trainer.git
+
