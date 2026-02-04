@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EV Math Trainer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main>
+        <section id="setup" class="setup-section">
+            <h1>📊 EV Math Trainer</h1>
+
+            <label for="playerName">Enter your name (optional):</label>
+            <input type="text" id="playerName" placeholder="Your name..." />
+
+            <h3>Select Difficulty:</h3>
+            <div class="difficulty-select">
+                <button class="difficulty-button" id="easyBtn" onclick="selectDifficulty('easy')">Easy</button>
+                <button class="difficulty-button" id="mediumBtn" onclick="selectDifficulty('medium')">Medium</button>
+                <button class="difficulty-button" id="hardBtn" onclick="selectDifficulty('hard')">Hard</button>
+            </div>
+
+            <h3>Select Number of Rounds:</h3>
+            <select id="roundCount">
+                <option value="5">5 Rounds</option>
+                <option value="10" selected>10 Rounds</option>
+                <option value="20">20 Rounds</option>
+            </select>
+
+            <button id="startBtn" onclick="startGame()" disabled>▶️ Start Game</button>
+        </section>
+
+        <section id="gameContainer" class="game-section" style="display: none;">
+            <div class="top-bar">
+                <span id="scoreDisplay">Score: 0</span>
+                <span id="roundDisplay">Round: 1</span>
+                <button id="muteBtn" onclick="toggleSound()">🔊 Sound On</button>
+            </div>
+
+            <h2>Question: <span id="questionText">?</span></h2>
+
+            <div class="quote-input">
+                <label for="evInput">Your EV Estimate:</label>
+                <input type="number" id="evInput" />
+                <button onclick="submitAnswer()">💬 Submit Answer</button>
+                <button onclick="showHint()">💡 Hint</button>
+            </div>
+
+            <div id="result" class="result-box">Awaiting your answer...</div>
+        </section>
+
+        <section class="tutorial-box">
+            <h3>📘 How the Game Works</h3>
+            <p>
+                Each round gives you a quick EV math problem. For example:
+                "30% chance to win $10, 70% chance to lose $5"
+            </p>
+            <p>
+                Enter the expected value (EV) range you believe is correct. If the real EV is in your range — you win
+                the round!
+            </p>
+            <p>
+                Try to be accurate and fast. Adjust the difficulty and number of rounds to challenge yourself.
+            </p>
+        </section>
+
+        <script src="game.js"></script>
+    </main>
+</body>
+
+</html>
